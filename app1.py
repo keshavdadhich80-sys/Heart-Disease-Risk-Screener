@@ -6,7 +6,31 @@ from sklearn.ensemble import RandomForestClassifier
 st.set_page_config(page_title="Heart Risk Screener", layout="centered")
 st.title("🫀 Heart Disease Risk Screener")
 st.warning("**DISCLAIMER:** This tool is for educational purposes only and DOES NOT provide medical advice or diagnosis. Please consult a doctor for any health concerns.")
-
+st.markdown("""
+<style>
+    /* Pure page ka background color (Light Medical Blue) */
+    .stApp {
+        background-color: #f0f8ff; 
+    }
+    
+    /* Pure text ka naya font */
+    html, body, [class*="css"] {
+        font-family: 'Trebuchet MS', 'Arial', sans-serif;
+    }
+    
+    /* Main Title ka color aur style */
+    h1 {
+        color: #d63031 !important; /* Dark Red */
+        font-family: 'Arial Black', sans-serif;
+        text-align: center;
+    }
+    
+    /* Baki headings ka color */
+    h2, h3 {
+        color: #0984e3 !important; /* Blue */
+    }
+</style>
+""", unsafe_allow_html=True)
 # 2. Data Load aur Model Train karna (Background mein)
 @st.cache_data
 def load_and_train():
@@ -57,3 +81,4 @@ if st.button("Calculate Risk"):
     else:
         st.success(f"✅ **Low Risk Detected** (Probability: {probability:.1f}%)")
         st.write("This profile does not show strong patterns of heart disease. Maintain a healthy lifestyle!")
+        

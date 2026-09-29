@@ -8,50 +8,46 @@ st.title("🫀 Heart Disease Risk Screener")
 st.warning("**DISCLAIMER:** This tool is for educational purposes only and DOES NOT provide medical advice or diagnosis. Please consult a doctor for any health concerns.")
 st.markdown("""
 <style>
-    /* 1. Premium Gradient Background */
     .stApp {
-        background: linear-gradient(135deg, #e0f7fa 0%, #ffffff 100%);
+        background: linear-gradient(270deg,
+            rgb(255,0,0), rgb(255,165,0), rgb(255,255,0),
+            rgb(0,255,0), rgb(0,255,255), rgb(0,0,255), rgb(148,0,211));
+        background-size: 1400% 1400%;
+        animation: bgflow 8s ease infinite;
     }
-    
-    /* 2. Text aur Headings ka style */
-    html, body, [class*="css"] {
-        font-family: 'Trebuchet MS', 'Arial', sans-serif;
+    @keyframes bgflow {
+        0%   {background-position: 0% 50%;}
+        50%  {background-position: 100% 50%;}
+        100% {background-position: 0% 50%;}
     }
-    h1 {
-        color: #d63031 !important;
-        font-family: 'Arial Black', sans-serif;
+
+    h1, h2, h3 {
+        animation: textcolor 15s linear infinite;
+        text-shadow: 0 0 8px rgb(0,0,0);
         text-align: center;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
     }
-    h2, h3 {
-        color: #0984e3 !important;
-    }
-
-    /* 3. BUBBLE STYLE FOR BOXES */
-    /* Input aur Select boxes ko gol (bubble) banana */
-    div[data-baseweb="input"] > div, 
-    div[data-baseweb="select"] > div {
-        border-radius: 25px !important; /* Gol shape ke liye */
-        border: 2px solid #74b9ff !important; /* Halka neela border */
-        background-color: #ffffff !important; /* Andar se white */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08) !important; /* 3D Shadow */
-        padding: 2px 10px !important;
-        transition: all 0.3s ease;
+    @keyframes textcolor {
+        0%   {color: rgb(255,0,0);}
+        33%  {color: rgb(0,255,0);}
+        66%  {color: rgb(0,120,255);}
+        100% {color: rgb(255,0,0);}
     }
 
-    /* Hover karne par box thoda glow karega */
-    div[data-baseweb="input"] > div:hover, 
-    div[data-baseweb="select"] > div:hover {
-        border-color: #0984e3 !important;
-        box-shadow: 0 6px 12px rgba(9, 132, 227, 0.2) !important;
+    .stButton>button {
+        background: rgb(15,15,15);
+        color: rgb(255,255,255);
+        border-radius: 12px;
+        border: 3px solid rgb(255,0,0);
+        animation: glow 4s linear infinite;
+    }
+    @keyframes glow {
+        0%   {border-color: rgb(255,0,0); box-shadow: 0 0 12px rgb(255,0,0);}
+        33%  {border-color: rgb(0,255,0); box-shadow: 0 0 12px rgb(0,255,0);}
+        66%  {border-color: rgb(0,0,255); box-shadow: 0 0 12px rgb(0,0,255);}
+        100% {border-color: rgb(255,0,0); box-shadow: 0 0 12px rgb(255,0,0);}
     }
 
-    /* Andar likhe hue numbers/text ka color dark aur bold karna */
-    div[data-baseweb="input"] input, 
-    div[data-baseweb="select"] div {
-        color: #2d3436 !important;
-        font-weight: bold !important;
-    }
+    label, p { color: rgb(255,255,255) !important; text-shadow: 1px 1px 3px rgb(0,0,0); }
 </style>
 """, unsafe_allow_html=True)
 # 2. Data Load aur Model Train karna (Background mein)

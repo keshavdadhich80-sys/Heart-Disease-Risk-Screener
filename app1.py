@@ -13,7 +13,7 @@ st.markdown("""
             rgb(255,0,0), rgb(255,165,0), rgb(255,255,0),
             rgb(0,255,0), rgb(0,255,255), rgb(0,0,255), rgb(148,0,211));
         background-size: 1400% 1400%;
-        animation: bgflow 8s ease infinite;
+        animation: bgflow 30s ease infinite;
     }
     @keyframes bgflow {
         0%   {background-position: 0% 50%;}

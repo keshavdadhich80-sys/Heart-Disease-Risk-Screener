@@ -92,6 +92,42 @@ st.markdown("""
         box-shadow: 12px 18px 30px rgba(0,0,0,0.5),
                     -4px -4px 12px rgba(255,255,255,0.6) !important;
     }
+    /* FIX: number boxes ke andar ka text/buttons wapas lao */
+    div[data-baseweb="input"],
+    div[data-baseweb="base-input"],
+    div[data-testid="stNumberInputContainer"] {
+        overflow: visible !important;
+        background: rgb(255,255,255) !important;
+    }
+    div[data-baseweb="input"] input,
+    div[data-testid="stNumberInputContainer"] input {
+        color: rgb(0,0,0) !important;
+        -webkit-text-fill-color: rgb(0,0,0) !important;
+        background: transparent !important;
+        font-weight: bold !important;
+    }
+    div[data-testid="stNumberInputContainer"] button {
+        background: rgb(235,240,250) !important;
+        color: rgb(0,0,0) !important;
+    }
+    div[data-testid="stNumberInputContainer"] button svg {
+        fill: rgb(0,0,0) !important;
+    }
+
+    /* FIX: dropdown ka dark color white karo */
+    div[data-baseweb="select"] > div,
+    div[data-baseweb="select"] > div > div {
+        background: rgb(255,255,255) !important;
+        color: rgb(0,0,0) !important;
+    }
+    div[data-baseweb="select"] div,
+    div[data-baseweb="select"] span {
+        color: rgb(0,0,0) !important;
+        -webkit-text-fill-color: rgb(0,0,0) !important;
+    }
+    div[data-baseweb="select"] svg {
+        fill: rgb(0,0,0) !important;
+    }
 </style>
 """, unsafe_allow_html=True)
 # 2. Data Load aur Model Train karna (Background mein)

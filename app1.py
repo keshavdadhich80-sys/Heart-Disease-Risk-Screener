@@ -48,6 +48,30 @@ st.markdown("""
     }
 
     label, p { color: rgb(255,255,255) !important; text-shadow: 1px 1px 3px rgb(0,0,0); }
+        /* Bubble style boxes */
+    div[data-baseweb="input"] > div,
+    div[data-baseweb="select"] > div {
+        border-radius: 25px !important;
+        border: 2px solid rgb(116,185,255) !important;
+        background-color: rgb(255,255,255) !important;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15) !important;
+        padding: 2px 10px !important;
+        transition: all 0.3s ease;
+    }
+    div[data-baseweb="input"] > div:hover,
+    div[data-baseweb="select"] > div:hover {
+        border-color: rgb(9,132,227) !important;
+        box-shadow: 0 6px 14px rgba(9,132,227,0.4) !important;
+    }
+    div[data-baseweb="input"] input,
+    div[data-baseweb="select"] div {
+        color: rgb(45,52,54) !important;
+        font-weight: bold !important;
+    }
+    /* +/- buttons ke bubble */
+    div[data-testid="stNumberInput"] button {
+        border-radius: 50% !important;
+    }
 </style>
 """, unsafe_allow_html=True)
 # 2. Data Load aur Model Train karna (Background mein)

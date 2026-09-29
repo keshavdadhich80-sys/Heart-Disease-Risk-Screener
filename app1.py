@@ -72,6 +72,26 @@ st.markdown("""
     div[data-testid="stNumberInputContainer"] button {
         border-radius: 50% !important;
     }
+    /* Poora widget box ubhra hua card */
+    div[data-testid="stNumberInput"],
+    div[data-testid="stSelectbox"] {
+        background: linear-gradient(145deg, rgba(255,255,255,0.35), rgba(255,255,255,0.12)) !important;
+        border: 2px solid rgba(255,255,255,0.7) !important;
+        border-radius: 25px !important;
+        padding: 14px 16px 16px 16px !important;
+        margin-bottom: 14px !important;
+        box-shadow: 8px 10px 20px rgba(0,0,0,0.4),
+                    -4px -4px 12px rgba(255,255,255,0.5),
+                    inset 0 2px 4px rgba(255,255,255,0.7) !important;
+        backdrop-filter: blur(6px);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    div[data-testid="stNumberInput"]:hover,
+    div[data-testid="stSelectbox"]:hover {
+        transform: translateY(-6px) scale(1.02);
+        box-shadow: 12px 18px 30px rgba(0,0,0,0.5),
+                    -4px -4px 12px rgba(255,255,255,0.6) !important;
+    }
 </style>
 """, unsafe_allow_html=True)
 # 2. Data Load aur Model Train karna (Background mein)
